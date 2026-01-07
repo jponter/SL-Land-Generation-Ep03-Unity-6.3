@@ -6,6 +6,8 @@ public class MapDisplay : MonoBehaviour
 {
 
     public Renderer textureRender;
+
+    [HideInInspector]
     public bool pointFilter = false;
     //public int localTextureScale = 1;
 
