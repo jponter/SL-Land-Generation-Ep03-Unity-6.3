@@ -8,8 +8,10 @@ public class MapGenerator : MonoBehaviour
     public int octaves;
     public float persistence;
     public float lacunarity;
+    public bool pointFilter;
 
     public bool autoUpdate;
+
 
     
 
@@ -18,6 +20,7 @@ public class MapGenerator : MonoBehaviour
         float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, noiseScale, octaves, persistence, lacunarity);
 
         MapDisplay display = FindFirstObjectByType<MapDisplay>();
+        display.pointFilter = pointFilter;
         display.DrawNoiseMap(noiseMap);
     }
 

@@ -6,9 +6,10 @@ public class MapDisplay : MonoBehaviour
 {
 
     public Renderer textureRender;
+    public bool pointFilter = false;
     //public int localTextureScale = 1;
 
-    
+
 
     public void DrawNoiseMap(float[,] noiseMap)
     {
@@ -21,7 +22,7 @@ public class MapDisplay : MonoBehaviour
         //}
 
         Texture2D texture = new Texture2D(width, height);
-        //texture.filterMode = FilterMode.Point;
+        if(pointFilter)texture.filterMode = FilterMode.Point;
 
         Color[] colorMap = new Color[width * height];
 
